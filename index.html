@@ -2,15 +2,85 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <!-- <meta name="viewport"
-        content="width=device-width, initial-scaled=1.0"-->
+        <meta name="viewport"
+        content="width=device-width, initial-scale=1.0"
+        >
         
         <title>LA Street Names</title>
         
+        <link
+            href="https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.css"
+            rel="stylesheet"
+        >
+
+        <style>
+            html, 
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+
+            #map {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+
     </head>
 
     <body>
+        <div id="map"></div>
+        <script src="https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.js"></script>
+    
+        <script>
+            const map = new maplibregl.Map({
+                container: 'map',
+                style: 'https://api.maptiler.com/maps/streets-v4/style.json?key=SNpuwN4LdwNozQ2BLN6N',
+                center: [-118.2437, 34.0522],
+                zoom: 10
+            });
+        </script>
+
+    <!--
+        <script>
+            const map = new maplibregl.Map({
+                container: 'map',
+                style: {
+                    version: 8,
+                    sources: {
+                        osm: {
+                            type: 'raster',
+                            tiles: [
+                                'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+                            ],
+                            tileSize: 256,
+                            attribution: 
+                            '© OpenStreetMap'
+                        }
+                    },
+                    layers: [
+                        {
+                        id: 'osm',
+                        type: 'raster',
+                        source: 'osm'
+                        }
+                    ]
+                },
+                center: [-118.2437, 34.0522],
+                zoom: 10
+            })
+        </script>
+        -->
+
+    </body>
+
+
+<!---
+<body>
         <h1>Name LA Streets</h1>
         <p>OpenStreetMap</p>
     </body>
+-->    
+
 </html>
